@@ -1,5 +1,8 @@
 public class Cajero {
-    public static void main(String[] args) throws Exception {
+
+    IManejador cadena;
+
+    public Cajero() {
 
         IManejador validadorMonto = new ValidadorMonto();
         IManejador dispensador100 = new Dispensador(100000);
@@ -14,18 +17,30 @@ public class Cajero {
         dispensador20.setSiguienteMnj(dispensador10);
         dispensador10.setSiguienteMnj(dispensador5);
 
-        validadorMonto.procesarTransaccion(575000);
+        cadena = validadorMonto;
+    }
+
+    public void retirarDinero(int cantidad) {
+        this.cadena.procesarTransaccion(cantidad);
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        Cajero cajero = new Cajero();
+
+        cajero.retirarDinero(575000);
         System.out.println("-------------------------");
-        validadorMonto.procesarTransaccion(57000);
+        cajero.retirarDinero(57000);
         System.out.println("-------------------------");
-        validadorMonto.procesarTransaccion(675000);
+        cajero.retirarDinero(675000);
         System.out.println("-------------------------");
-        validadorMonto.procesarTransaccion(832000);
+        cajero.retirarDinero(832000);
         System.out.println("-------------------------");
-        validadorMonto.procesarTransaccion(10000);
+        cajero.retirarDinero(10000);
         System.out.println("-------------------------");
-        validadorMonto.procesarTransaccion(5000); 
+        cajero.retirarDinero(5000); 
         System.out.println("-------------------------");
-        validadorMonto.procesarTransaccion(0); 
+        cajero.retirarDinero(0); 
+        System.out.println("-------------------------");
     }
 }

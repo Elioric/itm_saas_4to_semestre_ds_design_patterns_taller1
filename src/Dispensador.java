@@ -16,7 +16,7 @@ public class Dispensador extends AbstractManejador {
         int restante = cantidad % denominacion;
 
         if(numEfectivo > 0){
-            System.out.println("Dispensado " + numEfectivo + " billete(s) de $" + denominacion);
+            System.out.println("Dispensando " + numEfectivo + " billete(s) de $" + denominacion);
         }
 
         if (restante > 0 && this.getSiguienteMnj() != null) {
