@@ -1,27 +1,31 @@
 public class Cajero {
     public static void main(String[] args) throws Exception {
 
-        IManejador Dispensador100 = new Dispensador(100000);
-        IManejador Dispensador50 = new Dispensador(50000);
-        IManejador Dispensador20 = new Dispensador(20000);
-        IManejador Dispensador10 = new Dispensador(10000);
-        IManejador Dispensador5 = new Dispensador(5000);
+        IManejador validadorMonto = new ValidadorMonto();
+        IManejador dispensador100 = new Dispensador(100000);
+        IManejador dispensador50 = new Dispensador(50000);
+        IManejador dispensador20 = new Dispensador(20000);
+        IManejador dispensador10 = new Dispensador(10000);
+        IManejador dispensador5 = new Dispensador(5000);
 
-        Dispensador100.setSiguienteMnj(Dispensador50);
-        Dispensador50.setSiguienteMnj(Dispensador20);
-        Dispensador20.setSiguienteMnj(Dispensador10);
-        Dispensador10.setSiguienteMnj(Dispensador5);
+        validadorMonto.setSiguienteMnj(dispensador100);
+        dispensador100.setSiguienteMnj(dispensador50);
+        dispensador50.setSiguienteMnj(dispensador20);
+        dispensador20.setSiguienteMnj(dispensador10);
+        dispensador10.setSiguienteMnj(dispensador5);
 
-        Dispensador100.procesarTransaccion(575000);
+        validadorMonto.procesarTransaccion(575000);
         System.out.println("-------------------------");
-        Dispensador100.procesarTransaccion(57000);
+        validadorMonto.procesarTransaccion(57000);
         System.out.println("-------------------------");
-        Dispensador100.procesarTransaccion(675000);
+        validadorMonto.procesarTransaccion(675000);
         System.out.println("-------------------------");
-        Dispensador100.procesarTransaccion(832000);
+        validadorMonto.procesarTransaccion(832000);
         System.out.println("-------------------------");
-        Dispensador100.procesarTransaccion(10000);
+        validadorMonto.procesarTransaccion(10000);
         System.out.println("-------------------------");
-        Dispensador100.procesarTransaccion(5000); 
+        validadorMonto.procesarTransaccion(5000); 
+        System.out.println("-------------------------");
+        validadorMonto.procesarTransaccion(0); 
     }
 }
