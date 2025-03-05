@@ -1,6 +1,7 @@
+// Clase con el método principal
 public class Cajero {
 
-    IManejador cadena;
+    private IManejador cadena;
 
     public Cajero() {
 
