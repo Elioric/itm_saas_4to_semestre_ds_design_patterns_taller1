@@ -18,6 +18,6 @@ public abstract class AbstractManejador implements IManejador{
 
     // metodo abstracto para procesar la transaccion del cliente
     // es implementado en cada clase concreta
-    public void procesarTransaccion(int cantidad) { }
+    abstract public void procesarTransaccion(int cantidad);
     
 }
