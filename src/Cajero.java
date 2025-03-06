@@ -29,17 +29,21 @@ public class Cajero {
 
         Cajero cajero = new Cajero();
 
+        // CASOS DE PRUEBA
+        // Cantidades validas
         cajero.retirarDinero(575000);
         System.out.println("-------------------------");
-        cajero.retirarDinero(57000);
-        System.out.println("-------------------------");
         cajero.retirarDinero(675000);
-        System.out.println("-------------------------");
-        cajero.retirarDinero(832000);
         System.out.println("-------------------------");
         cajero.retirarDinero(10000);
         System.out.println("-------------------------");
         cajero.retirarDinero(5000); 
+        
+        //Cantidades invalidas
+        System.out.println("-------------------------");
+        cajero.retirarDinero(57000);
+        System.out.println("-------------------------");
+        cajero.retirarDinero(832000);
         System.out.println("-------------------------");
         cajero.retirarDinero(0); 
         System.out.println("-------------------------");
